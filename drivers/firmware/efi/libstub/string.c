@@ -56,7 +56,6 @@ int strncmp(const char *cs, const char *ct, size_t count)
 }
 #endif
 
-#ifndef __HAVE_ARCH_STRRCHR
 /**
  * strrchr - Find the last occurrence of a character in a string
  * @s: The string to be searched
@@ -71,4 +70,3 @@ char *strrchr(const char *s, int c)
 	} while (*s++);
 	return (char *)last;
 }
-#endif
