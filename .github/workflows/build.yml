@@ -51,3 +51,13 @@ jobs:
 
         echo "Compiling kernel..."
         make O=out CC=clang -j$(nproc --all)
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: kernel-image
+        path: |
+          out/arch/arm64/boot/Image
+          out/arch/arm64/boot/Image.gz
+          out/arch/arm64/boot/Image.gz-dtb
+          out/arch/arm64/boot/dtbo.img
